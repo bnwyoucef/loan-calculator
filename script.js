@@ -1,13 +1,3 @@
-// console.log('script work!');
-// let amount = 5000;
-// let interest = 0.09;
-// let totalInterest = 0;
-// let yearInt = 0;
-// for (let i = 0; i <5;i++) {
-//         totalInterest += amount *interest;
-//         amount -= 5000 /5;
-//         console.log(totalInterest);   
-// }
 const amount = document.querySelector('.amount');
 const interest = document.querySelector('.interest');
 const years = document.querySelector('.years');
@@ -38,6 +28,15 @@ function viewResults(totalPayValue,interest,years) {
                 interestPayment.textContent = interest;
                 monthlyPayment.textContent = totalPayValue / (years * 12);
                 document.querySelector('#ereur').style.display = 'none';
+                document.querySelector('.result').style.display = 'inline-block';
         }
 }
 calculateBtn.addEventListener('click',calculateResults);
+const clearBtn = document.querySelector('.clear');
+function clearScreen() {
+        document.querySelector('.result').style.display = 'none';
+        amount.value = '';
+        interest.value = '';
+        years.value = '';
+}
+clearBtn.addEventListener('click',clearScreen);

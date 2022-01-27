@@ -11,7 +11,7 @@ body {
 }
 .content {
     background-color: rgb(235, 235, 235);
-    width: 40%;
+    width: 50%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -51,13 +51,14 @@ input {
     border-right: 0;
     border-radius: 5px 0px 0px 5px;
 }
-.calculateBtn {
+.calculateBtn,.clear {
    cursor: pointer;
     width: 100%;
     padding: 5px;
     background-color: rgba(00, 00, 00, 0.8);
     color: white;
     border: none;
+    margin-bottom: 20px;
 }
 input:focus {
     border: 3px solid rgb(206, 43, 3);
@@ -66,6 +67,7 @@ input:focus {
 .result {
     margin-top: 20px;
     margin-bottom: 40px;
+    display: none;
 }
 #ereur {
     color: rgb(252, 43, 43);
@@ -93,4 +95,54 @@ p {
     border: 1px solid rgb(0, 0, 0);
     border-left: 0;
     border-radius: 0px 5px 5px 0px;
+    background-color: white;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+    .view {
+        display: flex;
+        flex-direction: column;
+    }
+    .view span {
+        width: auto;
+        border: none;
+        border-radius: 0;
+    }
+    .view p {
+        border: none;
+        width: auto;
+        border-radius: 0;
+    }
+}
+@media ((min-width: 768px) and (max-width:1000px)) {
+    .content {
+        width: 70%;
+    }
+    .view {
+        display: flex;
+        flex-direction: column;
+    }
+    .view span {
+        width: auto;
+        border: none;
+        border-radius: 0;
+    }
+    .view p {
+        border: none;
+        width: auto;
+        border-radius: 0;
+    }
+}
+@media ((min-width: 1000px) and (max-width:1400px)) {
+    .content {
+        width: 60%;
+    }
+}
+@media ((min-width: 1400px)) {
+    .content {
+        width: 50%;
+    }
 }

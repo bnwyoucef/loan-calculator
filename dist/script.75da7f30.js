@@ -118,16 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-// console.log('script work!');
-// let amount = 5000;
-// let interest = 0.09;
-// let totalInterest = 0;
-// let yearInt = 0;
-// for (let i = 0; i <5;i++) {
-//         totalInterest += amount *interest;
-//         amount -= 5000 /5;
-//         console.log(totalInterest);   
-// }
 var amount = document.querySelector('.amount');
 var interest = document.querySelector('.interest');
 var years = document.querySelector('.years');
@@ -161,10 +151,21 @@ function viewResults(totalPayValue, interest, years) {
     interestPayment.textContent = interest;
     monthlyPayment.textContent = totalPayValue / (years * 12);
     document.querySelector('#ereur').style.display = 'none';
+    document.querySelector('.result').style.display = 'inline-block';
   }
 }
 
 calculateBtn.addEventListener('click', calculateResults);
+var clearBtn = document.querySelector('.clear');
+
+function clearScreen() {
+  document.querySelector('.result').style.display = 'none';
+  amount.value = '';
+  interest.value = '';
+  years.value = '';
+}
+
+clearBtn.addEventListener('click', clearScreen);
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
