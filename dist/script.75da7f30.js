@@ -118,17 +118,53 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-console.log('script work!');
-var amount = 5000;
-var interest = 0.09;
-var totalInterest = 0;
-var yearInt = 0;
+// console.log('script work!');
+// let amount = 5000;
+// let interest = 0.09;
+// let totalInterest = 0;
+// let yearInt = 0;
+// for (let i = 0; i <5;i++) {
+//         totalInterest += amount *interest;
+//         amount -= 5000 /5;
+//         console.log(totalInterest);   
+// }
+var amount = document.querySelector('.amount');
+var interest = document.querySelector('.interest');
+var years = document.querySelector('.years');
+var totalPayment = document.querySelector('.totalPayment');
+var interestPayment = document.querySelector('.interestPayment');
+var monthlyPayment = document.querySelector('.monthlyPayment');
+var calculateBtn = document.querySelector('.calculateBtn');
 
-for (var i = 0; i < 5; i++) {
-  totalInterest += amount * interest;
-  amount -= 5000 / 5;
-  console.log(totalInterest);
+function calculateResults(event) {
+  event.preventDefault();
+  var amountValue = parseInt(amount.value, 10);
+  var interestValue = parseFloat(interest.value) / 100;
+  var yearsValue = parseInt(years.value);
+  var totalInterest = 0;
+  var amountConst = amountValue;
+
+  for (var i = 0; i < yearsValue; i++) {
+    totalInterest += amountValue * interestValue;
+    amountValue -= amountConst / yearsValue;
+  }
+
+  var totalPayment = amountConst + totalInterest;
+  viewResults(totalPayment, totalInterest, yearsValue);
 }
+
+function viewResults(totalPayValue, interest, years) {
+  if (!totalPayValue || !interest || !years) {
+    document.querySelector('#ereur').style.display = 'inline-block';
+  } else {
+    totalPayment.textContent = totalPayValue;
+    interestPayment.textContent = interest;
+    monthlyPayment.textContent = totalPayValue / (years * 12);
+    document.querySelector('#ereur').style.display = 'none';
+  }
+}
+
+calculateBtn.addEventListener('click', calculateResults);
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -157,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37633" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38005" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

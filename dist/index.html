@@ -10,17 +10,18 @@
 <body>
     <div class="content">
         <h1>Loan Calculator</h1>
+        <h4 id="ereur">please enter all the values!</h4>
         <form class="same loanForm">
             <div class="iconInput">
                 <span class="icon">$</span>
-                <input type="text" class="amount" placeholder="loan amount">
+                <input type="text" class="amount" placeholder="loan amount" required="">
             </div>
             <div class="iconInput">
                 <span class="icon">%</span>
-                <input type="text" class="interest" placeholder="interest">
+                <input type="text" class="interest" placeholder="interest" required="">
             </div>
             <div class="iconInput">
-                <input type="text" class="years" placeholder="years">
+                <input type="text" class="years" placeholder="years" required="">
             </div>
                 <button type="submit" class="calculateBtn">Calculate</button>
         </form>

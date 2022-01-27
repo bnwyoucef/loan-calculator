@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 .same {
-    width: 70%;
+    width: 90%;
 }
 h1 {
     margin: 30px;
@@ -66,6 +66,13 @@ input:focus {
 .result {
     margin-top: 20px;
     margin-bottom: 40px;
+}
+#ereur {
+    color: rgb(252, 43, 43);
+    background-color: rgb(247, 187, 187);
+    padding: 20px;
+    margin-bottom: 10px;
+    display: none;
 }
 h3 {
     text-align: center;
