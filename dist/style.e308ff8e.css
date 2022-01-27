@@ -12,7 +12,7 @@ body {
 .content {
     background-color: rgb(235, 235, 235);
     width: 40%;
-    padding: 30px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@ body {
     width: 70%;
 }
 h1 {
-    margin-bottom: 30px;
+    margin: 30px;
     font-size: 32px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -34,7 +34,6 @@ h1 {
     width: 100%;
     border: 1px solid black;
     border-radius: 5px 5px 5px 5px;
-
 }
 input {
     width: calc(100% - 20px);  
@@ -42,7 +41,6 @@ input {
     border: 1px solid black;
     border-left: 0;
     border-radius: 0px 5px 5px 0px;
-
 }
 
 .icon {
@@ -54,7 +52,7 @@ input {
     border-radius: 5px 0px 0px 5px;
 }
 .calculateBtn {
-   
+   cursor: pointer;
     width: 100%;
     padding: 5px;
     background-color: rgba(00, 00, 00, 0.8);
@@ -64,6 +62,30 @@ input {
 input:focus {
     border: 3px solid rgb(206, 43, 3);
     outline: none;
+}
+.result {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+h3 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.titles {
+    background-color: rgb(223, 223, 223);
+    padding: 10px;
+    width: 35%;
+    border: 1px solid rgb(0, 0, 0);
+    border-right: 0;
+    border-radius: 5px 0px 0px 5px;
+}
+p {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-left: 0;
+    border-radius: 0px 5px 5px 0px;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
